@@ -1,0 +1,17 @@
+<resources >
+    <string name="app_name">手机图库</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="selected">您选中了<b>%d</b>项</string>
+    <string name="sd_pic_num">SD 卡中有<b>%d</b>张图片</string>
+    <string name="details">详情</string>
+    <string name="name">名称:\n<b>%s</b></string>
+    <string name="path">路径:\n<b>%s</b></string>
+    <string name="time">上一次修改时间:\n<b>%s</b></string>
+    <string name="size">文件大小:\n<b>%s</b></string>
+    <string name="detail_dialog_cancel">取消</string>
+    <string name="more_dialog_back">返回</string>
+    <string name="more_dialog_go">更多</string>
+    <string name="title_activity_image_view">ImageViewActivity</string>
+</resources>

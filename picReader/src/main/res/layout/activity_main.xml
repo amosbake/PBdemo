@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                tools:context=".MainActivity">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_layout_header">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:background="@raw/main_bg"
+                >
+
+            <TextView
+                    android:id="@+id/id_img_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_alignParentTop="true"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"/>
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/id_img_count"
+                    android:src="@android:color/holo_blue_bright"
+                    android:layout_marginTop="0dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:id="@+id/id_layout_headmenu"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:background="@raw/head_bg"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+            <ImageButton
+                    android:id="@+id/id_ib_back"
+                    android:layout_width="@dimen/button_back_width"
+                    android:layout_height="match_parent"
+                    android:src="@raw/ic_cab_done"
+                    android:background="@android:color/transparent"/>
+
+            <TextView
+                    android:id="@+id/id_headtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"/>
+
+            <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dropdown_normal"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+            android:id="@+id/id_layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:background="@raw/head_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+        <ImageButton
+                android:id="@+id/id_ib_delete_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:src="@raw/ic_menu_trash"/>
+        <ImageButton
+                android:id="@+id/id_ib_details_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:src="@raw/ic_menu_info_details"/>
+        <ImageButton
+                android:id="@+id/id_ib_more_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:src="@raw/ic_menu_more_operations"/>
+    </LinearLayout>
+
+    <GridView
+            android:id="@+id/id_gridview"
+            android:layout_below="@id/id_layout_header"
+            android:layout_above="@id/id_layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="70dp"
+            android:horizontalSpacing="3dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"></GridView>
+
+</RelativeLayout>
