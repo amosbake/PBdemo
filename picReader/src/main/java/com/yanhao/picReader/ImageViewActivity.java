@@ -2,6 +2,7 @@ package com.yanhao.picReader;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -22,54 +23,54 @@ import java.util.Set;
 
 public class ImageViewActivity extends Activity {
     private static final String TAG="ImageViewActivity";
-    private ViewPager mViewPager;
-    private ArrayList<ImageView> images;
-    private ArrayList<File> pics;
+//    private ViewPager mViewPager;
+//    private ArrayList<ImageView> images;
+//    private ArrayList<File> pics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_view);
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
-        int screenWidth=getWindowManager().getDefaultDisplay().getWidth();
-        int screenHeight=getWindowManager().getDefaultDisplay().getHeight();
-        Intent intent=getIntent();
-        Bundle bundle=intent.getExtras();
-        Set<String> keySet=bundle.keySet();
-        for (String key:keySet){
-            pics.add(new File(bundle.getString(key)));
-            Log.i(TAG,bundle.getString(key));
-        }
-        for (File f:pics){
-            ImageView imageView=new ImageView(this);
-            imageView.setImageBitmap(FileUtil.decodeSampleBitmapFromFile(f,screenWidth,screenHeight));
-            images.add(imageView);
-        }
-        ViewPagerAdapter adapter=new ViewPagerAdapter();
-        mViewPager.setAdapter(adapter);
+        setContentView(R.layout.activity_grallery_view);
+//        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+//        int screenWidth=getWindowManager().getDefaultDisplay().getWidth();
+//        int screenHeight=getWindowManager().getDefaultDisplay().getHeight();
+//        Intent intent=getIntent();
+//        Bundle bundle=intent.getExtras();
+//        Set<String> keySet=bundle.keySet();
+//        for (String key:keySet){
+//            pics.add(new File(bundle.getString(key)));
+//            Log.i(TAG,bundle.getString(key));
+//        }
+//        for (File f:pics){
+//            ImageView imageView=new ImageView(this);
+//            imageView.setImageBitmap(BitmapFactory.decodeFile(f.getAbsolutePath()));
+//            images.add(imageView);
+//        }
+//        ViewPagerAdapter adapter=new ViewPagerAdapter();
+//        mViewPager.setAdapter(adapter);
     }
-    private class ViewPagerAdapter extends PagerAdapter{
-
-        @Override
-        public int getCount() {
-            return images.size();
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view==object;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView(images.get(position));
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(images.get(position),0);
-            return images.get(position);
-        }
-    }
+//    private class ViewPagerAdapter extends PagerAdapter{
+//
+//        @Override
+//        public int getCount() {
+//            return images.size();
+//        }
+//
+//        @Override
+//        public boolean isViewFromObject(View view, Object object) {
+//            return view==object;
+//        }
+//
+//        @Override
+//        public void destroyItem(ViewGroup container, int position, Object object) {
+//            container.removeView(images.get(position));
+//        }
+//
+//        @Override
+//        public Object instantiateItem(ViewGroup container, int position) {
+//            container.addView(images.get(position),0);
+//            return images.get(position);
+//        }
+//    }
 
 }

@@ -25,16 +25,19 @@ public class ImageAdapter extends BaseAdapter {
 
     public ImageAdapter(Context mContext) {
         this.mContext = mContext;
-        mInflater=LayoutInflater.from(mContext);
+        mInflater = LayoutInflater.from(mContext);
     }
-    public void setData(List<File> images){
-        this.images=images;
+
+    public void setData(List<File> images) {
+        this.images = images;
     }
-    public void setData(List<File> images,int [] imgState,boolean isSelect){
-        this.images=images;
-        this.imgState=imgState;
-        this.isSelect=isSelect;
+
+    public void setData(List<File> images, int[] imgState, boolean isSelect) {
+        this.images = images;
+        this.imgState = imgState;
+        this.isSelect = isSelect;
     }
+
     @Override
     public int getCount() {
         return images.size();
@@ -52,25 +55,26 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder=new ViewHolder();
+        ViewHolder holder = new ViewHolder();
 //        if (convertView==null){
-            convertView= mInflater.inflate(R.layout.image_item,null);
-            holder.imageView= (ImageView) convertView.findViewById(R.id.id_image_item);
-            holder.select= (ImageView) convertView.findViewById(R.id.id_iv_checkbox);
+        convertView = mInflater.inflate(R.layout.image_item, null);
+        holder.imageView = (ImageView) convertView.findViewById(R.id.id_image_item);
+        holder.select = (ImageView) convertView.findViewById(R.id.id_iv_checkbox);
 //            convertView.setTag(holder);
 //        }else{
 //            holder= (ViewHolder) convertView.getTag();
 //        }
 
-        holder.imageView.setImageBitmap(FileUtil.decodeSampleBitmapFromFile(images.get(position),60,60));
-        if(isSelect){
-            if (1==imgState[position]){
+        holder.imageView.setImageBitmap(FileUtil.decodeSampleBitmapFromFile(images.get(position), 80, 80));
+        if (isSelect) {
+            if (1 == imgState[position]) {
                 holder.select.setVisibility(View.VISIBLE);
             }
         }
         return convertView;
     }
-    class ViewHolder{
+
+    class ViewHolder {
         private ImageView imageView;
         private ImageView select;
     }
