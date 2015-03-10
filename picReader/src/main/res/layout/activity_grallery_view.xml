@@ -8,7 +8,8 @@
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:layout_alignParentBottom="true"
-            android:gravity="center">
+            android:gravity="center"
+            android:visibility="visible">
 
         <ImageView
                 android:id="@+id/id_line"
@@ -57,7 +58,8 @@
             android:layout_height="35dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:visibility="visible">
 
         <ImageButton
                 android:id="@+id/id_next"
@@ -96,8 +98,8 @@
 
     <com.yanhao.picReader.widget.MyGallery
             android:id="@+id/id_gallery"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:spacing="10dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true">

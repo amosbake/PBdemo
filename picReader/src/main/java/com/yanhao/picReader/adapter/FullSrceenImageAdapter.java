@@ -48,11 +48,19 @@ public class FullSrceenImageAdapter extends BaseAdapter {
         return position;
     }
 
+    /**
+     * 只显示了一个图片,并根据传入的大小尺寸来裁剪图片
+     *
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView = new ImageView(mContext);
         imageView.setImageBitmap(FileUtil.decodeSampleBitmapFromFile(images.get(position), reqWidth, reqHeight));
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setLayoutParams(new Gallery.LayoutParams(reqWidth, reqHeight));
         return imageView;
     }
